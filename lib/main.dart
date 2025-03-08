@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home: SignUpPage(),
+      home: OnboardScreen(),
       // Container(
       //   decoration: const BoxDecoration(
       //       image: DecorationImage(image: AssetImage("assets/image1.png"))),

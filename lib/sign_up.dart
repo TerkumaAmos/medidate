@@ -10,25 +10,32 @@ class SignUpPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xFFECF4E2),
         leading: Container(
-          margin: EdgeInsets.all(5),
-          padding: EdgeInsets.all(8),
-          child: const CircleAvatar(
-            backgroundColor: Color(0xE5E5E5),
-            foregroundColor: Color(0xE5E5E5),
-            child: Icon(
-              Icons.arrow_back,
-              color: Colors.green,
+          // margin: EdgeInsets.all(5),
+          // padding: EdgeInsets.all(8),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: CircleAvatar(
+              child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: BackButton(
+                  style: ButtonStyle(iconSize: WidgetStatePropertyAll(20)),
+                ),
+              ),
             ),
           ),
         ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            'Create your account',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          Padding(
+            padding: const EdgeInsets.only(left: 70, right: 60),
+            child: Text(
+              'Create your account',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
           ),
         ],
       ),
