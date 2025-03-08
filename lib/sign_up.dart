@@ -19,7 +19,7 @@ class SignUpPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                icon: BackButton(
+                icon: const BackButton(
                   style: ButtonStyle(iconSize: WidgetStatePropertyAll(20)),
                 ),
               ),
@@ -27,11 +27,11 @@ class SignUpPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
+      body: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 70, right: 60),
+            padding: EdgeInsets.only(left: 70, right: 60),
             child: Text(
               'Create your account',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
