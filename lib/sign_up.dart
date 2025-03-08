@@ -36,7 +36,9 @@ class SignUpPage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(
+            height: 40,
+          ),
           Container(
             padding: EdgeInsets.only(left: 110),
             height: 55,
