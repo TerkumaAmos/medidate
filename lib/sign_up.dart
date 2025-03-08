@@ -41,21 +41,24 @@ class SignUpPage extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.only(left: 110),
-            height: 55,
-            width: 320,
-            child: ElevatedButton(
-              style: const ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(Color(0xFF609966)),
-              ),
-              onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => LandingPage()),
-                // );
-              },
-              child: const Text(
-                "SIGN UP",
-                style: TextStyle(color: Colors.white),
+            child: Container(
+              width: 300,
+              child: Expanded(
+                child: ElevatedButton(
+                  style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(Color(0xFF609966)),
+                  ),
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => LandingPage()),
+                    // );
+                  },
+                  child: const Text(
+                    "SIGN UP",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
             ),
           ),
