@@ -64,22 +64,24 @@ class OnboardScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.black),
                   children: [
                     WidgetSpan(
+                        alignment: PlaceholderAlignment.middle,
                         //alignment: PlaceholderAlignment.middle,
                         child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignUpPage()),
-                        );
-                      },
-                      child: const Text(
-                        textAlign: TextAlign.start,
-                        ' SIGN IN',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF609966)),
-                      ),
-                    ))
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpPage()),
+                            );
+                          },
+                          child: const Text(
+                            textAlign: TextAlign.start,
+                            ' SIGN IN',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF609966)),
+                          ),
+                        ))
                   ]),
             ),
           )
