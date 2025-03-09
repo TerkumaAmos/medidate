@@ -39,51 +39,48 @@ class SignUpPage extends StatelessWidget {
               height: 40,
             ),
             Container(
-              child: Container(
-                width: 300,
-                child: Expanded(
-                  child: ElevatedButton(
-                    style: const ButtonStyle(
-                      backgroundColor:
-                          WidgetStatePropertyAll(Color(0xFF609966)),
-                    ),
-                    onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => LandingPage()),
-                      // );
-                    },
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+              width: 300,
+              child: Expanded(
+                child: ElevatedButton(
+                  style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(Color(0xFF609966)),
+                  ),
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => LandingPage()),
+                    // );
+                  },
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
 
-                      children: [
-                        CircleAvatar(
-                          radius: 16,
-                          // backgroundColor: Colors.blue,
-                          child: Text(
-                            'F',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
+                    children: [
+                      CircleAvatar(
+                        radius: 16,
+                        // backgroundColor: Colors.blue,
+                        child: Text(
+                          'f',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 4),
-                          child: Text(
-                            'CONTINUE WITH FACEBOOK',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 4),
+                        child: Text(
+                          'CONTINUE WITH FACEBOOK',
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
                         ),
-                      ],
+                      ),
+                    ],
 
-                      //  const Text(
-                      //   "SIGN UP",
-                      //   style: TextStyle(color: Colors.white),
-                      // ),
-                    ),
+                    //  const Text(
+                    //   "SIGN UP",
+                    //   style: TextStyle(color: Colors.white),
+                    // ),
                   ),
                 ),
               ),
