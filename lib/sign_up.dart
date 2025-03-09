@@ -174,40 +174,27 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ],
             ),
-            // Center(
-            //   child: RichText(
-            //     text: TextSpan(
-
-            //       text: "I have read the ",
-            //       style: DefaultTextStyle.of(context,
-
-            //       ),
-            //       children: [
-            //         WidgetSpan(
-            //           alignment: PlaceholderAlignment.middle,
-            //           //alignment: PlaceholderAlignment.middle,
-            //           child:
-            //           InkWell(
-            //             onTap: () {
-            //               Navigator.push(
-            //                 context,
-            //                 MaterialPageRoute(
-            //                     builder: (context) => const SignUpPage()),
-            //               );
-            //             },
-            //             child: const Text(
-            //               textAlign: TextAlign.start,
-            //               ' SIGN IN',
-            //               style: TextStyle(
-            //                   fontWeight: FontWeight.bold,
-            //                   color: Color(0xFF609966)),
-            //             ),
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // )
+            const SizedBox(
+              height: 30,
+            ),
+            Container(
+              height: 55,
+              width: 320,
+              child: ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(
+                    Color(0xFF609966),
+                  ),
+                ),
+                onPressed: () {},
+                child: const Text(
+                  'SIGN UP',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
