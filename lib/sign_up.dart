@@ -89,16 +89,20 @@ class SignUpPage extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
-            ElevatedButton(
-                style: const ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Colors.white)),
-                onPressed: () {},
-                child: const Text(
-                  'CONTINUE WITH GMAIL',
-                  style: TextStyle(color: Colors.black),
-                ))
+            Container(
+              height: 50,
+              width: 300,
+              child: ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(Colors.white)),
+                  onPressed: () {},
+                  child: const Text(
+                    'CONTINUE WITH GMAIL',
+                    style: TextStyle(color: Colors.black),
+                  )),
+            )
           ],
         ),
       ),
