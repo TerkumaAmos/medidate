@@ -43,21 +43,41 @@ class SignUpPage extends StatelessWidget {
                 width: 300,
                 child: Expanded(
                   child: ElevatedButton(
-                    style: const ButtonStyle(
-                      backgroundColor:
-                          WidgetStatePropertyAll(Color(0xFF609966)),
-                    ),
-                    onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => LandingPage()),
-                      // );
-                    },
-                    child: const Text(
-                      "SIGN UP",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            WidgetStatePropertyAll(Color(0xFF609966)),
+                      ),
+                      onPressed: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => LandingPage()),
+                        // );
+                      },
+                      child: const Stack(
+                        alignment: Alignment.centerLeft,
+                        children: [
+                          CircleAvatar(
+                            radius: 16,
+                            backgroundColor: Colors.blue,
+                            child: Text(
+                              'F',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 32),
+                            child: Text(''),
+                          ),
+                        ],
+                      )
+                      //  const Text(
+                      //   "SIGN UP",
+                      //   style: TextStyle(color: Colors.white),
+                      // ),
+                      ),
                 ),
               ),
             ),
