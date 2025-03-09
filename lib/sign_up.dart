@@ -69,7 +69,7 @@ class SignUpPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 4),
                         child: Text(
-                          'CONTINUE WITH FACEBOOK',
+                          '    CONTINUE WITH FACEBOOK',
                           style: TextStyle(
                             color: Colors.white,
                           ),
