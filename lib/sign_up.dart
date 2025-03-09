@@ -39,10 +39,15 @@ class SignUpPage extends StatelessWidget {
               height: 40,
             ),
             Container(
+              decoration: BoxDecoration(
+                color: Color(0xFF609966), // Button background color
+                borderRadius: BorderRadius.circular(30), // Rounded corners
+              ),
               width: 300,
               child: ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(Color(0xFF609966)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
                 ),
                 onPressed: () {
                   // Navigator.push(
@@ -56,7 +61,7 @@ class SignUpPage extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 16,
-                      // backgroundColor: Colors.blue,
+                      backgroundColor: Color(0xFF609966),
                       child: Text(
                         'f',
                         style: TextStyle(
