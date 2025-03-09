@@ -136,13 +136,19 @@ class _SignUpPageState extends State<SignUpPage> {
               height: 30,
             ),
             RichText(
-                text: TextSpan(
-                    style: DefaultTextStyle.of(context).style,
-                    children: const <TextSpan>[
-                  TextSpan(text: "I have read the"),
+                text: const TextSpan(
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF3E3E3E),
+                    ),
+                    children: <TextSpan>[
+                  TextSpan(text: "I have read the", style: TextStyle()),
                   TextSpan(
-                      text: 'PRIVACY POLICY',
-                      style: TextStyle(fontWeight: FontWeight.bold))
+                      text: ' PRIVACY POLICY',
+                      style: TextStyle(
+                          color: Color(0xFF3E3E3E),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16))
                 ]))
             // Center(
             //   child: RichText(
