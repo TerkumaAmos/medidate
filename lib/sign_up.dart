@@ -88,10 +88,11 @@ class SignUpPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            ElevatedButton(onPressed: () {}, child: Text('CONTINUE WITH GMAIL'))
+            ElevatedButton(
+                onPressed: () {}, child: const Text('CONTINUE WITH GMAIL'))
           ],
         ),
       ),
