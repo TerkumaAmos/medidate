@@ -12,6 +12,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final emailController = TextEditingController();
   final nameController = TextEditingController();
   final passwordController = TextEditingController();
+  bool? isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -135,21 +136,44 @@ class _SignUpPageState extends State<SignUpPage> {
             const SizedBox(
               height: 30,
             ),
-            RichText(
-                text: const TextSpan(
+            Row(
+              children: [
+                RichText(
+                  text: const TextSpan(
                     style: TextStyle(
                       fontSize: 16,
                       color: Color(0xFF3E3E3E),
                     ),
                     children: <TextSpan>[
-                  TextSpan(text: "I have read the", style: TextStyle()),
-                  TextSpan(
-                      text: ' PRIVACY POLICY',
-                      style: TextStyle(
-                          color: Color(0xFF3E3E3E),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16))
-                ]))
+                      TextSpan(text: "I have read the", style: TextStyle()),
+                      TextSpan(
+                        text: ' PRIVACY POLICY',
+                        style: TextStyle(
+                            color: Color(0xFF3E3E3E),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+                Checkbox(
+                  value: isChecked,
+                  activeColor: Color(0x61876E),
+                  onChanged: (newbool) {
+                    setState(
+                      () {
+                        isChecked = newbool;
+                      },
+                    );
+                  },
+                  shape: const RoundedRectangleBorder(
+                      side: BorderSide(
+                          color: Color(0x61876E),
+                          width: 2,
+                          style: BorderStyle.solid)),
+                ),
+              ],
+            ),
             // Center(
             //   child: RichText(
             //     text: TextSpan(
