@@ -138,29 +138,31 @@ class _SignUpPageState extends State<SignUpPage> {
             Center(
               child: RichText(
                 text: TextSpan(
-                    text: "Already have an Account ?",
-                    style: const TextStyle(color: Colors.black),
-                    children: [
-                      WidgetSpan(
-                          alignment: PlaceholderAlignment.middle,
-                          //alignment: PlaceholderAlignment.middle,
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SignUpPage()),
-                              );
-                            },
-                            child: const Text(
-                              textAlign: TextAlign.start,
-                              ' SIGN IN',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF609966)),
-                            ),
-                          ))
-                    ]),
+                  text: "I have read the ",
+                  style: const TextStyle(color: Colors.black),
+                  children: [
+                    WidgetSpan(
+                      alignment: PlaceholderAlignment.middle,
+                      //alignment: PlaceholderAlignment.middle,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUpPage()),
+                          );
+                        },
+                        child: const Text(
+                          textAlign: TextAlign.start,
+                          ' SIGN IN',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF609966)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             )
           ],
