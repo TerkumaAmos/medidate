@@ -132,14 +132,14 @@ class _SignUpPageState extends State<SignUpPage> {
               height: 30,
             ),
             Password(passwordController: passwordController),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Center(
               child: RichText(
                 text: TextSpan(
                     text: "Already have an Account ?",
-                    style: TextStyle(color: Colors.black),
+                    style: const TextStyle(color: Colors.black),
                     children: [
                       WidgetSpan(
                           alignment: PlaceholderAlignment.middle,
