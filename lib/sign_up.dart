@@ -58,7 +58,7 @@ class SignUpPage extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             radius: 16,
-                            backgroundColor: Colors.blue,
+                            // backgroundColor: Colors.blue,
                             child: Text(
                               'F',
                               style: TextStyle(
@@ -68,8 +68,8 @@ class SignUpPage extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 32),
-                            child: Text(''),
+                            padding: EdgeInsets.only(left: 4),
+                            child: Text('create your account now'),
                           ),
                         ],
                       )
