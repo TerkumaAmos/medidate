@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:harmony_hush/app_text.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
+
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  final emailController = TextEditingController();
+  final nameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFECF4E2),
+      backgroundColor: const Color(0xFFECF4E2),
       appBar: AppBar(
-        backgroundColor: Color(0xFFECF4E2),
-        leading: Container(
-          // margin: EdgeInsets.all(5),
-          // padding: EdgeInsets.all(8),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: CircleAvatar(
-              child: IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: const BackButton(
-                  style: ButtonStyle(iconSize: WidgetStatePropertyAll(20)),
-                ),
+        backgroundColor: const Color(0xFFECF4E2),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 10.0),
+          child: CircleAvatar(
+            child: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const BackButton(
+                style: ButtonStyle(iconSize: WidgetStatePropertyAll(20)),
               ),
             ),
           ),
@@ -40,7 +46,7 @@ class SignUpPage extends StatelessWidget {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Color(0xFF609966), // Button background color
+                color: const Color(0xFF609966), // Button background color
                 borderRadius: BorderRadius.circular(30), // Rounded corners
               ),
               width: 300,
@@ -89,23 +95,113 @@ class SignUpPage extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             Container(
               height: 50,
               width: 300,
               child: ElevatedButton(
-                  style: const ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Colors.white)),
-                  onPressed: () {},
-                  child: const Text(
-                    'CONTINUE WITH GMAIL',
+                style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(Colors.white)),
+                onPressed: () {},
+                child: const Row(
+                  children: [
+                    Image(
+                      image: AssetImage("assets/image4.png"),
+                    ),
+                    Text(
+                      '         CONTINUE WITH GMAIL',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            const Text("OR SIGN IN WITH EMAIL"),
+            const SizedBox(height: 30),
+            AppTextField(
+              hintText: "Email address",
+              controller: emailController,
+            ),
+            const SizedBox(height: 30),
+            AppTextField(hintText: 'Name', controller: nameController),
+            const SizedBox(
+              height: 30,
+            ),
+            Password(passwordController: passwordController),
+            SizedBox(
+              height: 30,
+            ),
+            Center(
+              child: RichText(
+                text: TextSpan(
+                    text: "Already have an Account ?",
                     style: TextStyle(color: Colors.black),
-                  )),
+                    children: [
+                      WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          //alignment: PlaceholderAlignment.middle,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUpPage()),
+                              );
+                            },
+                            child: const Text(
+                              textAlign: TextAlign.start,
+                              ' SIGN IN',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF609966)),
+                            ),
+                          ))
+                    ]),
+              ),
             )
           ],
         ),
       ),
     );
+  }
+}
+
+class Password extends StatefulWidget {
+  const Password({
+    super.key,
+    required this.passwordController,
+  });
+
+  final TextEditingController passwordController;
+
+  @override
+  State<Password> createState() => _PasswordState();
+}
+
+class _PasswordState extends State<Password> {
+  bool showPassword = true;
+
+  void _toggleVisibility() {
+    setState(() {
+      showPassword = !showPassword;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AppTextField(
+        obscureText: showPassword,
+        suffixIcon: IconButton(
+          icon: Icon(
+            showPassword ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: _toggleVisibility,
+        ),
+        hintText: 'Password',
+        controller: widget.passwordController);
   }
 }
