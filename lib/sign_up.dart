@@ -135,36 +135,49 @@ class _SignUpPageState extends State<SignUpPage> {
             const SizedBox(
               height: 30,
             ),
-            Center(
-              child: RichText(
+            RichText(
                 text: TextSpan(
-                  text: "I have read the ",
-                  style: const TextStyle(color: Colors.black),
-                  children: [
-                    WidgetSpan(
-                      alignment: PlaceholderAlignment.middle,
-                      //alignment: PlaceholderAlignment.middle,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignUpPage()),
-                          );
-                        },
-                        child: const Text(
-                          textAlign: TextAlign.start,
-                          ' SIGN IN',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF609966)),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
+                    style: DefaultTextStyle.of(context).style,
+                    children: const <TextSpan>[
+                  TextSpan(text: "I have read the"),
+                  TextSpan(
+                      text: 'PRIVACY POLICY',
+                      style: TextStyle(fontWeight: FontWeight.bold))
+                ]))
+            // Center(
+            //   child: RichText(
+            //     text: TextSpan(
+
+            //       text: "I have read the ",
+            //       style: DefaultTextStyle.of(context,
+
+            //       ),
+            //       children: [
+            //         WidgetSpan(
+            //           alignment: PlaceholderAlignment.middle,
+            //           //alignment: PlaceholderAlignment.middle,
+            //           child:
+            //           InkWell(
+            //             onTap: () {
+            //               Navigator.push(
+            //                 context,
+            //                 MaterialPageRoute(
+            //                     builder: (context) => const SignUpPage()),
+            //               );
+            //             },
+            //             child: const Text(
+            //               textAlign: TextAlign.start,
+            //               ' SIGN IN',
+            //               style: TextStyle(
+            //                   fontWeight: FontWeight.bold,
+            //                   color: Color(0xFF609966)),
+            //             ),
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),
