@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:harmony_hush/landing_page.dart';
+import 'package:harmony_hush/sign_in.dart';
 import 'package:harmony_hush/sign_up.dart';
 
 class OnboardScreen extends StatelessWidget {
@@ -8,7 +9,7 @@ class OnboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFECF4E2),
+      backgroundColor: const Color(0xFFECF4E2),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -45,10 +46,10 @@ class OnboardScreen extends StatelessWidget {
                 backgroundColor: WidgetStatePropertyAll(Color(0xFF609966)),
               ),
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => LandingPage()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignUpPage()),
+                );
               },
               child: const Text(
                 "SIGN UP",
@@ -56,12 +57,12 @@ class OnboardScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           Center(
             child: RichText(
               text: TextSpan(
                   text: "Already have an Account ?",
-                  style: TextStyle(color: Colors.black),
+                  style: const TextStyle(color: Colors.black),
                   children: [
                     WidgetSpan(
                         alignment: PlaceholderAlignment.middle,
@@ -71,15 +72,17 @@ class OnboardScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SignUpPage()),
+                                builder: (context) => const SignInPage(),
+                              ),
                             );
                           },
                           child: const Text(
                             textAlign: TextAlign.start,
                             ' SIGN IN',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF609966)),
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF609966),
+                            ),
                           ),
                         ))
                   ]),

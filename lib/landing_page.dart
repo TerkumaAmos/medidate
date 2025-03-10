@@ -9,7 +9,10 @@ class LandingPage extends StatelessWidget {
       backgroundColor: Color(0xFFE0EECD),
       body: Container(
         decoration: const BoxDecoration(
-            image: DecorationImage(image: AssetImage("ssets/image1.png"))),
+          image: DecorationImage(
+            image: AssetImage("assets/image1.png"),
+          ),
+        ),
       ),
     );
   }

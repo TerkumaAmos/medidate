@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:harmony_hush/app_text.dart';
+import 'package:harmony_hush/sign_in.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -186,7 +187,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     Color(0xFF609966),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignInPage()));
+                },
                 child: const Text(
                   'SIGN UP',
                   style: TextStyle(

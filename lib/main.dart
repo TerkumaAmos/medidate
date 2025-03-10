@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:harmony_hush/landing_page.dart';
 import 'package:harmony_hush/onboard_screen.dart';
+import 'package:harmony_hush/sign_in.dart';
 import 'package:harmony_hush/sign_up.dart';
 
 void main() {
