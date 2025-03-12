@@ -5,6 +5,19 @@ class OnboardScreen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: Color(0xFFE0EECD),
+      appBar: AppBar(
+        backgroundColor: Color(0xFFE0EECD),
+      ),
+      body: Stack(
+        children: [
+          Image(
+            image: AssetImage("assets/image4.png"),
+          ),
+          Text("")
+        ],
+      ),
+    );
   }
 }
