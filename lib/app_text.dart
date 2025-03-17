@@ -36,6 +36,8 @@ class AppTextField extends StatelessWidget {
                 const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0)),
         controller: controller,
       ),
+    
     );
+  
   }
 }

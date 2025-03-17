@@ -129,6 +129,7 @@ class _SignUpPageState extends State<SignUpPage> {
               controller: emailController,
             ),
             const SizedBox(height: 30),
+            FilledButton(onPressed: () {}, child: const Text('')),
             AppTextField(hintText: 'Name', controller: nameController),
             const SizedBox(
               height: 30,
@@ -159,7 +160,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 Checkbox(
                   value: isChecked,
-                  activeColor: Color(0x61876E),
+                  activeColor: const Color(0x61876E),
                   onChanged: (newbool) {
                     setState(
                       () {
@@ -188,8 +189,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignInPage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignInPage()));
                 },
                 child: const Text(
                   'SIGN UP',
