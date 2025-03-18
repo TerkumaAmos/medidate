@@ -6,7 +6,7 @@ import 'package:harmony_hush/sign_in.dart';
 import 'package:harmony_hush/sign_up.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

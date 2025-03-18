@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:harmony_hush/landing_page.dart';
+import 'package:harmony_hush/sign_up.dart';
 
 class OnboardScreen2 extends StatelessWidget {
   const OnboardScreen2({super.key});
@@ -95,14 +97,21 @@ class OnboardScreen2 extends StatelessWidget {
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
-                      const   WidgetStatePropertyAll(Color(0xFFECF4E2)),
+                          const WidgetStatePropertyAll(Color(0xFFECF4E2)),
                       shape: WidgetStatePropertyAll(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignUpPage(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       "Get Started",
                       style: TextStyle(color: Color(0xFF609966)),

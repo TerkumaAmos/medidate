@@ -128,8 +128,8 @@ class _SignUpPageState extends State<SignUpPage> {
               hintText: "Email address",
               controller: emailController,
             ),
-            const SizedBox(height: 30),
-            FilledButton(onPressed: () {}, child: const Text('')),
+            const SizedBox(height: 20),
+            // FilledButton(onPressed: () {}, child: const Text('')),
             AppTextField(hintText: 'Name', controller: nameController),
             const SizedBox(
               height: 30,
@@ -160,7 +160,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 Checkbox(
                   value: isChecked,
-                  activeColor: const Color(0x61876E),
+                  activeColor: const Color(0x61876E99),
                   onChanged: (newbool) {
                     setState(
                       () {
@@ -169,10 +169,11 @@ class _SignUpPageState extends State<SignUpPage> {
                     );
                   },
                   shape: const RoundedRectangleBorder(
-                      side: BorderSide(
-                          color: Color(0x61876E),
-                          width: 2,
-                          style: BorderStyle.solid)),
+                    side: BorderSide(
+                        color: Color(0x61876E),
+                        width: 2,
+                        style: BorderStyle.solid),
+                  ),
                 ),
               ],
             ),
@@ -190,9 +191,11 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignInPage()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignInPage(),
+                    ),
+                  );
                 },
                 child: const Text(
                   'SIGN UP',
