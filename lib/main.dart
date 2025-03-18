@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home:Medidate()
+      home:SignInPage()
       // Container(
       //   decoration: const BoxDecoration(
       //       image: DecorationImage(image: AssetImage("assets/image1.png"))),
