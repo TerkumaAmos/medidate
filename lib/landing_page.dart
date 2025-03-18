@@ -6,7 +6,7 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE0EECD),
+      backgroundColor:const  Color(0xFFE0EECD),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
