@@ -23,7 +23,7 @@ class OnboardScreen2 extends StatelessWidget {
           ),
           const Positioned(
             left: 120,
-            top: 80,
+            top: 90,
             child: Text(
               "Hi Terkuma ! Welcome \n   to HarmonyHush",
               style: TextStyle(color: Colors.black, fontSize: 20),
