@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:harmony_hush/Icons.dart';
 
 class medidate extends StatelessWidget {
   const medidate({super.key});
@@ -8,20 +9,93 @@ class medidate extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFECF4E2),
       appBar: AppBar(
-        backgroundColor: Color(0xFFECF4E2),
+          backgroundColor: Color(0xFFECF4E2),
+
+          title: Row(
+            
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Meditate"),
+            ],
+          ),
       ),
-      body: const Stack(
+      body: Column(
         children: [
-          Positioned(
-            top: 0,
-              right: 0,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal:0.0),
-                child: Image(image: AssetImage("assets/amos12.png",
-                ),
-                ),
+          Center(
+            child: Text("Explore Inner Peace, One Meditation at a time",
+              style: TextStyle(fontSize: 15),
+            ),
+          ),
+          SizedBox(height: 30),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: CardWithIcon(iconData: Icons.arrow_back, text:"All" ),
               ),
+              CardWithIcon(iconData: Icons.arrow_back, text:"My" ),
+              CardWithIcon(iconData: Icons.arrow_back, text:"Anxious" ),
+              CardWithIcon(iconData: Icons.arrow_back, text:"Anxious" ),
+              CardWithIcon(iconData: Icons.arrow_back, text:"Anxious" ),
+
+            ],
+          ),
+          Container(
+            height: 200,
+            width: 380,
+            margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Color(0x3E3E3E),
+
+              borderRadius: BorderRadius.circular(20),
+              image: DecorationImage(image:
+
+              AssetImage(
+
+                  "assets/terks.png",
+
+              ),
+                fit:BoxFit.cover,
+              ),
+            ),
+            child:  Stack(
+              children: [
+                Positioned(
+                     top:40,
+                    left: 110,
+
+                    child: Text("The Forest Moon",
+                      style: TextStyle(
+                          color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+
+
+                ),
+                Positioned(
+                  top: 70,
+                    left: 40,
+                    child: Text("Always Knew the greatest things in life are free \n   So i invested my money in your company ",
+                      style: TextStyle(color: Colors.white
+                    ),)
+                ),
+                Positioned(
+                  top: 150,
+                    left: 10,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(Color(0xFFECF4E2),
+
+                        ),
+                        minimumSize: WidgetStatePropertyAll(Size(70, 30),),
+                      ),
+                        onPressed:(){}, child:
+                    Text("Premium",style: TextStyle(color: Colors.white),), ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
