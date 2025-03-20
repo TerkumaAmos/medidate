@@ -9,20 +9,23 @@ class medidate extends StatelessWidget {
       backgroundColor: Color(0xFFECF4E2),
       appBar: AppBar(
         backgroundColor: Color(0xFFECF4E2),
-
       ),
-      body: Stack(
+      body: const Stack(
         children: [
           Positioned(
             top: 0,
               right: 0,
               child: Padding(
-                padding: const EdgeInsets.symmetric(
+                padding: EdgeInsets.symmetric(
                     horizontal:0.0),
-                child: Image(image: AssetImage("assets/amos12.png")),
-              ))
+                child: Image(image: AssetImage("assets/amos12.png",
+                ),
+                ),
+              ),
+          ),
         ],
       ),
+
     );
   }
 }
