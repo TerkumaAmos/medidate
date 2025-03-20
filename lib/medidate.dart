@@ -20,11 +20,10 @@ class medidate extends StatelessWidget {
           ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: Text("Explore Inner Peace, One Meditation at a time",
-              style: TextStyle(fontSize: 15),
-            ),
+          Text("Explore Inner Peace, One Meditation at a time",
+            style: TextStyle(fontSize: 15),
           ),
           SizedBox(height: 30),
           Row(
@@ -44,7 +43,7 @@ class medidate extends StatelessWidget {
           Container(
             height: 200,
             width: 380,
-            margin: EdgeInsets.all(10),
+            margin: EdgeInsets.only(left: 10, right: 10, top: 10),
             decoration: BoxDecoration(
               color: Color(0x3E3E3E),
 
@@ -82,19 +81,83 @@ class medidate extends StatelessWidget {
                     ),)
                 ),
                 Positioned(
-                  top: 150,
+                  top: 160,
                     left: 10,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: WidgetStatePropertyAll(Color(0xFFECF4E2),
+                    child: SizedBox(
+                      width: 107,
+                      height: 30,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStatePropertyAll(Color(0x61876E),
 
+                          ),
+                         // minimumSize: WidgetStatePropertyAll(Size(5, 30),),
                         ),
-                        minimumSize: WidgetStatePropertyAll(Size(70, 30),),
+                          onPressed:(){}, child:
+                      Text("Premium",style: TextStyle(color: Colors.white),), ),
+                    ),
+                ),
+                Positioned(
+                  top: 150,
+                  left: 170,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(Color(0xFFECF4E2),
+
                       ),
-                        onPressed:(){}, child:
-                    Text("Premium",style: TextStyle(color: Colors.white),), ),
+                      minimumSize: WidgetStatePropertyAll(Size(50, 30),),
+                    ),
+                    onPressed:(){}, child:
+                  Text("START",style: TextStyle(color: Colors.black),
+                  ),
+                  ),
                 ),
               ],
+            ),
+          ),
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left:20,right: 20,top: 20),
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("assets/hey.png"),
+                      fit:BoxFit.cover
+
+                  ),
+                  color: Color(0x3E3E3E),
+
+                  borderRadius: BorderRadius.circular(20),
+
+                ),
+
+
+              ),
+  Container(
+    height: 100,
+    width: 100,
+    decoration: BoxDecoration(
+      color: Colors.black,
+
+    ),
+    ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30.0),
+            child: Text("Fall universe",style: TextStyle(fontSize: 20),),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30.0),
+            child: Text("30 min . Sleep music ",style: TextStyle(fontSize: 15),),
+          ),
+          Container(
+            height: 100,
+            width: 100,
+            decoration: BoxDecoration(
+              color: Colors.black,
+
             ),
           ),
         ],

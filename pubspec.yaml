@@ -71,6 +71,9 @@ flutter:
     - assets/cloud5.png
     - assets/amos12.png
     - assets/terks.png
+    - assets/hello.png
+    - assets/hey.png
+    - assets/hi.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
