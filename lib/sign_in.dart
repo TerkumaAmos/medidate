@@ -20,13 +20,17 @@ class _SignInPageState extends State<SignInPage> {
       appBar: AppBar(
         backgroundColor: const Color(0xFFECF4E2),
         leading: Padding(
-          padding: const EdgeInsets.only(left: 10),
+          padding: const EdgeInsets.only(left: 12),
           child: CircleAvatar(
+            backgroundColor:Colors.white,
             child: IconButton(
+
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              icon: const BackButton(),
+              icon: Container(
+                padding: EdgeInsets.symmetric(horizontal: 0),
+                  child: BackButton()),
             ),
           ),
         ),
