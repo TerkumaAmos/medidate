@@ -119,12 +119,11 @@ class medidate extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 10,),
           Row(
             children: [
               Container(
-
-                margin: EdgeInsets.only(left:20,right: 20),
+                margin: EdgeInsets.only(left:10,right: 10),
                 height: 180,
                 width: 200,
                 decoration: BoxDecoration(
@@ -132,33 +131,38 @@ class medidate extends StatelessWidget {
                       image: AssetImage(
                           "assets/hey.png",
                       ),
-                      fit: BoxFit.fill
-
+                      fit: BoxFit.cover
                   ),
                   // color: Color(0x3E3E3E),
                   color: Colors.red,
-
                   borderRadius: BorderRadius.circular(20),
-
                 ),
-
-
               ),
-  Container(
-    height: 100,
-    width: 100,
-    decoration: BoxDecoration(
-      color: Colors.black,
+        Transform.translate(
+       offset: Offset(0, -40),
+       child: Container(
+      height: 100,
+      width: 190,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.black,
+             image: DecorationImage(image: AssetImage("assets/hello.png"))
+      ),
+      ),
 
-    ),
-    ),
+        ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Text("Fall universe",style: TextStyle(fontSize: 20),),
+          const Padding(
+            padding: EdgeInsets.only(left: 20.0),
+            child: Text("Fall universe",style: TextStyle(fontSize: 20),
+            ),
           ),
-
+           const Padding(
+            padding: EdgeInsets.only(left: 20.0),
+            child: Text("Fall universe",style: TextStyle(fontSize: 20),
+            ),
+          ),
         ],
       ),
 
