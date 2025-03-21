@@ -22,10 +22,13 @@ class medidate extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Explore Inner Peace, One Meditation at a time",
-            style: TextStyle(fontSize: 15),
+          Padding(
+            padding: const EdgeInsets.only(left: 30.0),
+            child: Text("Explore Inner Peace, One Meditation at a time",
+              style: TextStyle(fontSize: 15),
+            ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -43,7 +46,7 @@ class medidate extends StatelessWidget {
           Container(
             height: 200,
             width: 380,
-            margin: EdgeInsets.only(left: 10, right: 10, top: 10),
+            margin: EdgeInsets.only(left: 10, right: 10, top: 5),
             decoration: BoxDecoration(
               color: Color(0x3E3E3E),
 
@@ -118,7 +121,7 @@ class medidate extends StatelessWidget {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.only(left:20,right: 20,top: 20),
+                margin: EdgeInsets.only(left:20,right: 20,top: 5),
                 height: 200,
                 width: 200,
                 decoration: BoxDecoration(
@@ -146,18 +149,30 @@ class medidate extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30.0),
-            child: Text("Fall universe",style: TextStyle(fontSize: 20),),
+            child: Transform.translate(
+              offset: const Offset(0, -20), // Moves up 20px
+              child: const Text(
+                "Fall universe",
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30.0),
-            child: Text("30 min . Sleep music ",style: TextStyle(fontSize: 15),),
+            child: Transform.translate(
+              offset: Offset(0, -20),
+                child: Text("30 min . Sleep music ",style: TextStyle(fontSize: 15),),),
           ),
-          Container(
-            height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-              color: Colors.black,
+          Transform.translate(
+            offset: Offset(0, -20),
+            child: Container(
+              height: 100,
+              width: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage("assets/moon.png")),
+                color: Color(0x3E3E3E),
 
+              ),
             ),
           ),
         ],
