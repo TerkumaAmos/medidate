@@ -12,7 +12,7 @@ class medidate extends StatelessWidget {
           backgroundColor: Color(0xFFECF4E2),
 
           title: Row(
-            
+
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Meditate"),
@@ -43,10 +43,11 @@ class medidate extends StatelessWidget {
 
             ],
           ),
+          SizedBox(height: 10),
           Container(
             height: 200,
-            width: 380,
-            margin: EdgeInsets.only(left: 10, right: 10, top: 5),
+            width: 400,
+            margin: EdgeInsets.only(left: 10, right: 10),
             decoration: BoxDecoration(
               color: Color(0x3E3E3E),
 
@@ -118,18 +119,24 @@ class medidate extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 10),
           Row(
             children: [
               Container(
-                margin: EdgeInsets.only(left:20,right: 20,top: 5),
-                height: 200,
+
+                margin: EdgeInsets.only(left:20,right: 20),
+                height: 180,
                 width: 200,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage("assets/hey.png"),
-                      fit:BoxFit.cover
+                  image: DecorationImage(
+                      image: AssetImage(
+                          "assets/hey.png",
+                      ),
+                      fit: BoxFit.fill
 
                   ),
-                  color: Color(0x3E3E3E),
+                  // color: Color(0x3E3E3E),
+                  color: Colors.red,
 
                   borderRadius: BorderRadius.circular(20),
 
@@ -148,33 +155,10 @@ class medidate extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30.0),
-            child: Transform.translate(
-              offset: const Offset(0, -20), // Moves up 20px
-              child: const Text(
-                "Fall universe",
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Text("Fall universe",style: TextStyle(fontSize: 20),),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 30.0),
-            child: Transform.translate(
-              offset: Offset(0, -20),
-                child: Text("30 min . Sleep music ",style: TextStyle(fontSize: 15),),),
-          ),
-          Transform.translate(
-            offset: Offset(0, -20),
-            child: Container(
-              height: 100,
-              width: 200,
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/moon.png")),
-                color: Color(0x3E3E3E),
 
-              ),
-            ),
-          ),
         ],
       ),
 
