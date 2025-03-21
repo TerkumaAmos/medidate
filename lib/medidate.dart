@@ -158,7 +158,7 @@ class medidate extends StatelessWidget {
             child: Text("Fall universe",style: TextStyle(fontSize: 20),
             ),
           ),
-           const Padding(
+            const Padding(
             padding: EdgeInsets.only(left: 20.0),
             child: Text("Fall universe",style: TextStyle(fontSize: 20),
             ),
