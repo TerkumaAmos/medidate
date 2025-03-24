@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:medidate(),
+      home: medidate(),
       // Container(
       //   decoration: const BoxDecoration(
       //       image: DecorationImage(image: AssetImage("assets/image1.png"))),

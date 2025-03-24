@@ -2,7 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:harmony_hush/Icons.dart';
 
 class medidate extends StatelessWidget {
-  const medidate({super.key});
+  medidate({super.key});
+
+  final List<Map<String, String>> gridItems = [
+    {
+      'image': 'assets/hi.png',
+      'title': 'Fall Universe',
+      'subtitle': '30 Min • Sleep music'
+    },
+    {
+      'image': 'assets/hey.png',
+      'title': 'Birds Rising',
+      'subtitle': '45 Min • Calm music'
+    },
+    {
+      'image': 'assets/hello.png',
+      'title': 'Moon Rising',
+      'subtitle': '45 Min • Calm music'
+    },
+    {
+      'image': 'assets/moon.png',
+      'title': 'Morning Star',
+      'subtitle': '15 Min • Morning music'
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -21,30 +44,39 @@ class medidate extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(
-            padding: EdgeInsets.only(left: 30.0),
+            padding: EdgeInsets.only(left: 30.0, top: 10),
             child: Text(
               "Explore Inner Peace, One Meditation at a time",
               style: TextStyle(fontSize: 15),
             ),
           ),
-          SizedBox(height: 20),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          const SizedBox(height: 20),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+          ),
+          Row(
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
-                child: CardWithIcon(iconData: Icons.arrow_back, text: "All"),
-              ),
-              CardWithIcon(iconData: Icons.arrow_back, text: "My"),
-              CardWithIcon(iconData: Icons.arrow_back, text: "Anxious"),
-              CardWithIcon(iconData: Icons.arrow_back, text: "Anxious"),
-              CardWithIcon(iconData: Icons.arrow_back, text: "Anxious"),
+              _buildCategoryButton(Icons.grid_view, "All", true),
+              _buildCategoryButton(Icons.favorite_border, "My", false),
+              _buildCategoryButton(
+                  Icons.sentiment_dissatisfied, "Anxious", false),
+              _buildCategoryButton(Icons.nightlight_round, "Sleep", false),
+              _buildCategoryButton(Icons.child_care, "Kids", false),
+              const SizedBox(width: 0),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: 10.0),
+              //   child: CardWithIcon(iconData: Icons.arrow_back, text: "All"),
+              // ),
+              // CardWithIcon(iconData: Icons.arrow_back, text: "My"),
+              // CardWithIcon(iconData: Icons.arrow_back, text: "Anxious"),
+              // CardWithIcon(iconData: Icons.arrow_back, text: "Anxious"),
+              // CardWithIcon(iconData: Icons.arrow_back, text: "Anxious"),
             ],
           ),
           SizedBox(height: 10),
           Container(
             height: 200,
-            width: 400,
+            // width: 400,
             margin: EdgeInsets.only(left: 10, right: 10),
             decoration: BoxDecoration(
               color: Color(0x3E3E3E),
@@ -119,67 +151,109 @@ class medidate extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Container(
-                color: Colors.red,
-                child: const Image(
-                  image: AssetImage("assets/hey.png"),
-                  fit: BoxFit.cover,
+          SizedBox(height: 10),
+          // Grid of meditation cards
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 0.7,
                 ),
-                margin: const EdgeInsets.only(left: 10, right: 10),
-                height: 180,
-                width: 200,
-                // decoration: BoxDecoration(
-                //   image: const DecorationImage(
-                //     image: AssetImage(
-                //       "assets/hey.png",
-                //     ),
-                //     fit: BoxFit.fill,
-                //   ),
-                //   // color: Color(0x3E3E3E),
-                //   color: Colors.red,
-                //   borderRadius: BorderRadius.circular(20),
-                // ),
+                itemCount: gridItems.length,
+                itemBuilder: (context, index) {
+                  return _buildGridItem(
+                    gridItems[index]['image']!,
+                    gridItems[index]['title']!,
+                    gridItems[index]['subtitle']!,
+                  );
+                },
               ),
-              Transform.translate(
-                offset: const Offset(0, -40),
-                child: Positioned(
-                  child: Container(
-                    height: 100,
-                    width: 190,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.black,
-                      image: const DecorationImage(
-                        image: AssetImage("assets/hello.png"),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Text(
-              "Fall universe",
-              style: TextStyle(fontSize: 20, color: Color(0xFF609966)),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Text(
-              "30 Min . Sleep music ",
-              style: TextStyle(fontSize: 10),
             ),
           ),
         ],
       ),
+      // Bottom Navigation Bar
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey,
+        currentIndex: 2, // Meditate tab is selected
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.music_note), label: "Music"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.self_improvement), label: "Meditate"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.nightlight_round), label: "Sleep"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Shehan"),
+        ],
+      ),
     );
   }
+}
+
+Widget _buildGridItem(String imagePath, String title, String subtitle) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Container(
+        height: 150,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: AssetImage(imagePath), // Replace with your image
+            fit: BoxFit.cover,
+          ),
+        ),
+        clipBehavior: Clip.hardEdge,
+      ),
+      const SizedBox(height: 8),
+      Text(
+        title,
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      Text(
+        subtitle,
+        style: const TextStyle(
+          fontSize: 14,
+          color: Colors.grey,
+        ),
+      ),
+    ],
+  );
+}
+
+Widget _buildCategoryButton(IconData icon, String text, bool isSelected) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 0),
+    child: SizedBox(
+      width: 80,
+      child: Chip(
+        avatar: Icon(
+          icon,
+          color: isSelected ? Colors.green : Colors.grey,
+          size: 20,
+        ),
+        label: Text(
+          text,
+          style: TextStyle(
+            color: isSelected ? Colors.green : Colors.grey,
+            fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+          ),
+        ),
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(color: Colors.grey.shade300),
+        ),
+      ),
+    ),
+  );
 }
