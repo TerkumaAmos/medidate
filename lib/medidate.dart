@@ -125,19 +125,25 @@ class medidate extends StatelessWidget {
           Row(
             children: [
               Container(
+                color: Colors.red,
+                child: Image(
+                  image: AssetImage("assets/hey.png"),
+                  fit: BoxFit.cover,
+                ),
                 margin: const EdgeInsets.only(left: 10, right: 10),
                 height: 180,
                 width: 200,
-                decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      image: AssetImage(
-                        "assets/hey.png",
-                      ),
-                      fit: BoxFit.cover),
-                  // color: Color(0x3E3E3E),
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                // decoration: BoxDecoration(
+                //   image: const DecorationImage(
+                //     image: AssetImage(
+                //       "assets/hey.png",
+                //     ),
+                //     fit: BoxFit.fill,
+                //   ),
+                //   // color: Color(0x3E3E3E),
+                //   color: Colors.red,
+                //   borderRadius: BorderRadius.circular(20),
+                // ),
               ),
               Transform.translate(
                 offset: const Offset(0, -40),
@@ -150,6 +156,7 @@ class medidate extends StatelessWidget {
                       color: Colors.black,
                       image: const DecorationImage(
                         image: AssetImage("assets/hello.png"),
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
