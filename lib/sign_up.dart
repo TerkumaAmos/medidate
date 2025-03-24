@@ -104,7 +104,10 @@ class _SignUpPageState extends State<SignUpPage> {
               width: 300,
               child: ElevatedButton(
                 style: const ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Colors.white)),
+                  backgroundColor: WidgetStatePropertyAll(
+                    Colors.white,
+                  ),
+                ),
                 onPressed: () {},
                 child: const Row(
                   children: [
@@ -236,14 +239,15 @@ class _PasswordState extends State<Password> {
   @override
   Widget build(BuildContext context) {
     return AppTextField(
-        obscureText: showPassword,
-        suffixIcon: IconButton(
-          icon: Icon(
-            showPassword ? Icons.visibility : Icons.visibility_off,
-          ),
-          onPressed: _toggleVisibility,
+      obscureText: showPassword,
+      suffixIcon: IconButton(
+        icon: Icon(
+          showPassword ? Icons.visibility : Icons.visibility_off,
         ),
-        hintText: 'Password',
-        controller: widget.passwordController);
+        onPressed: _toggleVisibility,
+      ),
+      hintText: 'Password',
+      controller: widget.passwordController,
+    );
   }
 }

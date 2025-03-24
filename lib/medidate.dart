@@ -126,7 +126,7 @@ class medidate extends StatelessWidget {
             children: [
               Container(
                 color: Colors.red,
-                child: Image(
+                child: const Image(
                   image: AssetImage("assets/hey.png"),
                   fit: BoxFit.cover,
                 ),
