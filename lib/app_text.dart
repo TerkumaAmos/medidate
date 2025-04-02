@@ -25,19 +25,20 @@ class AppTextField extends StatelessWidget {
           // color: Color(0xFF609966),
         ),
         decoration: InputDecoration(
-            border: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
             ),
-            hintText: hintText,
-            suffixIcon: suffixIcon,
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0)),
+          ),
+          hintText: hintText,
+          suffixIcon: suffixIcon,
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 4.0,
+            horizontal: 10.0,
+          ),
+        ),
         controller: controller,
       ),
-    
     );
-  
   }
 }
