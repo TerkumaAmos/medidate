@@ -21,8 +21,9 @@ class AppTextField extends StatelessWidget {
       child: TextField(
         obscureText: obscureText,
         style: const TextStyle(
-          fontSize: 15,
-          // color: Color(0xFF609966),
+          // fontSize: 10,
+          //  color: Color(0xFF609966),
+
         ),
         decoration: InputDecoration(
           border: const OutlineInputBorder(
@@ -31,6 +32,10 @@ class AppTextField extends StatelessWidget {
             ),
           ),
           hintText: hintText,
+          hintStyle: const TextStyle(
+            color: Color(0xFF609966),
+            fontSize: 12,
+          ),
           suffixIcon: suffixIcon,
           contentPadding: const EdgeInsets.symmetric(
             vertical: 4.0,

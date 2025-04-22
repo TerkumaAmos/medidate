@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Medidate(),
+      home: SignUpPage(),
       // Container(
       //   decoration: const BoxDecoration(
       //       image: DecorationImage(image: AssetImage("assets/image1.png"))),

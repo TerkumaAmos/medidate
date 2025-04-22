@@ -22,141 +22,152 @@ class _SignInPageState extends State<SignInPage> {
         leading: Padding(
           padding: const EdgeInsets.only(left: 12),
           child: CircleAvatar(
-            backgroundColor:Colors.white,
+            backgroundColor: Colors.white,
+            radius: 20,
             child: IconButton(
+              icon: Icon(Icons.arrow_back,
+                  color: Color(0xFF609966),
+                size: 24,
+              ),
+              onPressed: (){
+                Navigator.pop(context); // Go back to previous screen
 
-              onPressed: () {
-                Navigator.of(context).pop();
               },
-              icon: Container(
-                padding: EdgeInsets.symmetric(horizontal: 0),
-                  child: BackButton()),
             ),
           ),
+
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 60.0),
-        child: Column(
-          children: [
-            const Text(
-              "Welcome back",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 30),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xFF609966), // Button background color
-                borderRadius: BorderRadius.circular(30),
+      body: SingleChildScrollView(
+
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 60.0),
+          child: Column(
+            children: [
+              const Text(
+                "Welcome back",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              width: 320,
-              height: 55,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
+              const SizedBox(height: 30),
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF609966), // Button background color
+                  borderRadius: BorderRadius.circular(30),
                 ),
-                onPressed: () {},
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CircleAvatar(
-                      radius: 16,
-                      backgroundColor: Color(0xFF609966),
-                      child: Text("F"),
+                width: 320,
+                height: 55,
+                child: Expanded(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 4),
-                      child: Text(
-                        '    CONTINUE WITH FACEBOOK',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 30),
-            Container(
-              height: 50,
-              width: 300,
-              child: ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(Colors.white),
-                ),
-                onPressed: () {},
-                child: const Row(
-                  children: [
-                    Image(
-                      image: AssetImage("assets/image4.png"),
-                    ),
-                    Text(
-                      '         CONTINUE WITH GMAIL',
-                      style: TextStyle(color: Colors.black),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 30),
-            const Text("OR SIGN IN WITH EMAIL"),
-            const SizedBox(height: 30),
-            AppTextField(
-              hintText: "Email address",
-              controller: emailController,
-            ),
-            const SizedBox(height: 30),
-            Password(passwordController: passwordController),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-                "                                             forgot password ?"),
-            const SizedBox(height: 30),
-            Container(
-              width: 320,
-              height: 55,
-              child: ElevatedButton(
-                style: const ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Color(0xFF609966))),
-                onPressed: () {},
-                child: const Text(
-                  "SIGN IN",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            const SizedBox(height: 30),
-            Center(
-              child: RichText(
-                  text: TextSpan(
-                      style: const TextStyle(color: Colors.black),
-                      text: "If you don't have an account ?",
+                    onPressed: () {},
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                    WidgetSpan(
-                        alignment: PlaceholderAlignment.middle,
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SignUpPage(),
-                              ),
-                            );
-                          },
-                          child: const Text(
-                            textAlign: TextAlign.start,
-                            '  SIGN UP',
+                        CircleAvatar(
+                          radius: 16,
+                          backgroundColor: Color(0xFF609966),
+                          child: Text("F"),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 4),
+                          child: Text(
+                            '    CONTINUE WITH FACEBOOK',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF609966),),
+                              color: Colors.white,
+                            ),
                           ),
-                        )),
-                  ])),
-            )
-          ],
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+
+              ),
+
+              const SizedBox(height: 30),
+              Container(
+                height: 50,
+                width: 300,
+                child: ElevatedButton(
+                  style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(Colors.white),
+                  ),
+                  onPressed: () {},
+                  child: const Row(
+                    children: [
+                      Image(
+                        image: AssetImage("assets/image4.png"),
+                      ),
+                      Text(
+                        '         CONTINUE WITH GMAIL',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30),
+              const Text("OR SIGN IN WITH EMAIL"),
+              const SizedBox(height: 30),
+              AppTextField(
+                hintText: "Email address",
+                controller: emailController,
+              ),
+              const SizedBox(height: 30),
+              Password(passwordController: passwordController),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                  "                                             forgot password ?"),
+              const SizedBox(height: 30),
+              Container(
+                width: 320,
+                height: 55,
+                child: ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(Color(0xFF609966))),
+                  onPressed: () {},
+                  child: const Text(
+                    "SIGN IN",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30),
+              Center(
+                child: RichText(
+                    text: TextSpan(
+                        style: const TextStyle(color: Colors.black),
+                        text: "If you don't have an account ?",
+                        children: [
+                      WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignUpPage(),
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              textAlign: TextAlign.start,
+                              '  SIGN UP',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF609966),),
+                            ),
+                          ),),
+                    ],),),
+              ),
+            ],
+          ),
         ),
       ),
     );
