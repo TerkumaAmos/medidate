@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:harmony_hush/landing_page.dart';
+import 'package:harmony_hush/medidate.dart';
 import 'package:harmony_hush/sign_up.dart';
 
 class OnboardScreen2 extends StatelessWidget {
@@ -71,11 +72,11 @@ class OnboardScreen2 extends StatelessWidget {
                 bottom: -370,
                 left: -90,
                 child: Container(
-                  height: 650,
+                  height: 690,
                   width: 600,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xFF609966),
+                    color: Color(0xFF3C6255),
                   ),
                 ),
               ),
@@ -84,7 +85,7 @@ class OnboardScreen2 extends StatelessWidget {
                 right: -30,
                 child: Image(
                   width: 500,
-                  height: 200,
+                  height: 170,
                   image: AssetImage("assets/cloud3.png"),
                 ),
               ),
@@ -108,13 +109,17 @@ class OnboardScreen2 extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const SignUpPage(),
+                          builder: (context) =>  Medidate(),
                         ),
                       );
                     },
                     child: const Text(
                       "Get Started",
-                      style: TextStyle(color: Color(0xFF609966)),
+                      style: TextStyle(
+                        fontSize: 20,
+                          color: Color(0xFF609966,
+
+                          ),),
                     ),
                   ),
                 ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:harmony_hush/app_text.dart';
 import 'package:harmony_hush/landing_page.dart';
+import 'package:harmony_hush/onboard_screen2.dart';
 import 'package:harmony_hush/sign_up.dart';
 
 class SignInPage extends StatefulWidget {
@@ -21,11 +22,20 @@ class _SignInPageState extends State<SignInPage> {
         backgroundColor: const Color(0xFFECF4E2),
         leading: Padding(
           padding: const EdgeInsets.only(left: 12),
-          child: CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 20,
+          child: Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+
+              color: Color(0xFFECF4E2), // Circle background color
+              border: Border.all(
+                color: Colors.white,
+                width: 1,
+              ),
+            ),
             child: IconButton(
-              icon: Icon(Icons.arrow_back,
+              icon:const Icon(Icons.arrow_back,
                   color: Color(0xFF609966),
                 size: 24,
               ),
@@ -56,33 +66,47 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 width: 320,
                 height: 55,
-                child: Expanded(
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent,
-                    ),
-                    onPressed: () {},
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        CircleAvatar(
-                          radius: 16,
-                          backgroundColor: Color(0xFF609966),
-                          child: Text("F"),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 4),
-                          child: Text(
-                            '    CONTINUE WITH FACEBOOK',
-                            style: TextStyle(
-                              color: Colors.white,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                  ),
+                  onPressed: () {},
+                  child:  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        radius: 16,
+                        backgroundColor: Color(0xFF609966),
+                        child: Container(
+                          width: 30,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+
+                              border: Border.all(
+                                color: Colors.white,
+                                width: 1,
+                              ),
                             ),
+                            child:const  Center(child: Text(
+                              'f',style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                            ),),),),
+                      ),
+                   const    Padding(
+                        padding: EdgeInsets.only(left: 4),
+                        child: Text(
+                          '    CONTINUE WITH FACEBOOK',
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
                         ),
+                      ),
 
-                      ],
-                    ),
+                    ],
                   ),
                 ),
 
@@ -122,8 +146,13 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                  "                                             forgot password ?"),
+             const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const Text(
+                      "forgot password ?"),
+                ],
+              ),
               const SizedBox(height: 30),
               Container(
                 width: 320,
@@ -131,7 +160,14 @@ class _SignInPageState extends State<SignInPage> {
                 child: ElevatedButton(
                   style: const ButtonStyle(
                       backgroundColor: WidgetStatePropertyAll(Color(0xFF609966))),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const OnboardScreen2(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     "SIGN IN",
                     style: TextStyle(color: Colors.white),

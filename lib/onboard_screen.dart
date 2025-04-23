@@ -35,23 +35,19 @@ class OnboardScreen extends StatelessWidget {
           const SizedBox(height: 20),
           const Center(
             child: Text(
-                'Foster global peace and well-being through \n     accessible, guided meditation pratices '),
+                'Foster global peace and well-being through \n     accessible, guided meditation practices '),
           ),
           const SizedBox(height: 40),
           Container(
             height: 55,
             width: 320,
-            child: ElevatedButton(
-              style: const ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(Color(0xFF609966)),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SignUpPage()),
-                );
-              },
-              child: const Text(
+            decoration: BoxDecoration(
+                color: Colors.red,
+
+                borderRadius: BorderRadius.circular(30)
+            ),
+            child:const  Center(
+              child: Text(
                 "SIGN UP",
                 style: TextStyle(color: Colors.white),
               ),

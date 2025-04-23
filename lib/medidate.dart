@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:harmony_hush/Icons.dart';
 
-class Medidate extends StatelessWidget {
+class Medidate extends StatefulWidget {
   Medidate({super.key});
 
+  @override
+  State<Medidate> createState() => _MedidateState();
+}
+
+class _MedidateState extends State<Medidate> {
   final List<Map<String, String>> gridItems = [
     {
       'image': 'assets/hey.png',
@@ -26,6 +31,13 @@ class Medidate extends StatelessWidget {
       'subtitle': '15 Min • Morning music'
     },
   ];
+   int _selectedIndex =0;
+   void _navigateBottomBar(int index){
+     setState(() {
+       _selectedIndex =index ;
+     });
+   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,15 +74,6 @@ class Medidate extends StatelessWidget {
             children: [
               Padding(
                 padding:
-                    // _buildCategoryButton(Icons.grid_view, "All", true),
-                    // _buildCategoryButton(Icons.favorite_border, "My", false),
-                    // _buildCategoryButton(
-                    //     Icons.sentiment_dissatisfied, "Anxious", false),
-                    // _buildCategoryButton(Icons.nightlight_round, "Sleep", false),
-                    // _buildCategoryButton(Icons.child_care, "Kids", false),
-                    // const SizedBox(width: 0),
-
-                    // Padding(
                     EdgeInsets.symmetric(horizontal: 10.0),
                 child: CardWithIcon(iconData: Icons.grid_view, text: "All"),
               ),
@@ -160,7 +163,7 @@ class Medidate extends StatelessWidget {
             ),
           ),
        const    SizedBox(height: 10),
-          // Grid of meditation cards
+         // Grid of meditation cards
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -182,24 +185,32 @@ class Medidate extends StatelessWidget {
               ),
             ),
           ),
+
         ],
+
       ),
-      // Bottom Navigation Bar
+
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedItemColor: Colors.green,
+        backgroundColor: Color(0xFFECF4E2),
         unselectedItemColor: Colors.grey,
-        currentIndex: 1, // Meditate tab is selected
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.music_note), label: "Music"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.self_improvement), label: "Meditate"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.nightlight_round), label: "Sleep"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Shehan"),
-        ],
+        selectedItemColor: Color(0xFF61876E),
+
+        currentIndex: _selectedIndex,
+        onTap: _navigateBottomBar,
+        type: BottomNavigationBarType.fixed,
+        items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.my_library_music_rounded),label: 'Music'),
+
+        BottomNavigationBarItem(icon: Icon(Icons.self_improvement),label: 'Meditate'),
+
+        BottomNavigationBarItem(icon: Icon(Icons.nightlight),label: 'Sleep'),
+
+        BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Shehan'),
+
+      ],
       ),
+
     );
   }
 }

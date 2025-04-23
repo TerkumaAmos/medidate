@@ -19,8 +19,8 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFECF4E2),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFECF4E2),
+     appBar: AppBar(
+    backgroundColor: const Color(0xFFECF4E2),
         leading: Padding(
           padding: const EdgeInsets.only(left: 10.0),
           child: Container(
@@ -88,7 +88,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             width: 1,
                           ),
                         ),
-                        child: Center(
+                        child:const Center(
                           child: Text(
                             'f',
                             style: TextStyle(
@@ -99,7 +99,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                       ),
-                      Padding(
+                    const   Padding(
                         padding: EdgeInsets.only(left: 4),
                         child: Text(
                           '    CONTINUE WITH FACEBOOK',
