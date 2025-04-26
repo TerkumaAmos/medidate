@@ -102,7 +102,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     const   Padding(
                         padding: EdgeInsets.only(left: 4),
                         child: Text(
-                          '    CONTINUE WITH FACEBOOK',
+                          ' CONTINUE WITH FACEBOOK',
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -170,25 +170,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 height: 30,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  RichText(
-                    text: const TextSpan(
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFF3E3E3E),
-                      ),
-                      children: <TextSpan>[
-                        TextSpan(text: "I have read the", style: TextStyle()),
-                        TextSpan(
-                          text: ' PRIVACY POLICY',
-                          style: TextStyle(
-                              color: Color(0xFF3E3E3E),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
-                        ),
-                      ],
-                    ),
-                  ),
+                  Text('I have read the'),
+                  Text('PRIVACY POLICY',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
                   Checkbox(
                     value: isChecked,
                     activeColor: const  Color(0xFF609966),

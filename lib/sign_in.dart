@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:harmony_hush/app_text.dart';
-import 'package:harmony_hush/landing_page.dart';
 import 'package:harmony_hush/onboard_screen2.dart';
 import 'package:harmony_hush/sign_up.dart';
 
@@ -28,28 +27,26 @@ class _SignInPageState extends State<SignInPage> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
 
-              color: Color(0xFFECF4E2), // Circle background color
+              color: const Color(0xFFECF4E2), // Circle background color
               border: Border.all(
                 color: Colors.white,
                 width: 1,
               ),
             ),
             child: IconButton(
-              icon:const Icon(Icons.arrow_back,
-                  color: Color(0xFF609966),
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Color(0xFF609966),
                 size: 24,
               ),
-              onPressed: (){
+              onPressed: () {
                 Navigator.pop(context); // Go back to previous screen
-
               },
             ),
           ),
-
         ),
       ),
       body: SingleChildScrollView(
-
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 60.0),
           child: Column(
@@ -72,46 +69,52 @@ class _SignInPageState extends State<SignInPage> {
                     shadowColor: Colors.transparent,
                   ),
                   onPressed: () {},
-                  child:  Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CircleAvatar(
                         radius: 16,
-                        backgroundColor: Color(0xFF609966),
+                        backgroundColor: const Color(0xFF609966),
                         child: Container(
                           width: 30,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-
-                              border: Border.all(
+                          height: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 1,
+                            ),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'f',
+                              style: TextStyle(
                                 color: Colors.white,
-                                width: 1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
                               ),
                             ),
-                            child:const  Center(child: Text(
-                              'f',style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24,
-                            ),),),),
-                      ),
-                   const    Padding(
-                        padding: EdgeInsets.only(left: 4),
-                        child: Text(
-                          '    CONTINUE WITH FACEBOOK',
-                          style: TextStyle(
-                            color: Colors.white,
                           ),
                         ),
                       ),
-
+                      const Padding(
+                        padding: EdgeInsets.only(left: 4),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'CONTINUE WITH FACEBOOK',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
-
               ),
-
               const SizedBox(height: 30),
               Container(
                 height: 50,
@@ -146,11 +149,10 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(
                 height: 10,
               ),
-             const Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const Text(
-                      "forgot password ?"),
+                  Text("forgot password ?"),
                 ],
               ),
               const SizedBox(height: 30),
@@ -159,7 +161,8 @@ class _SignInPageState extends State<SignInPage> {
                 height: 55,
                 child: ElevatedButton(
                   style: const ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Color(0xFF609966))),
+                      backgroundColor:
+                          WidgetStatePropertyAll(Color(0xFF609966))),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -177,30 +180,34 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(height: 30),
               Center(
                 child: RichText(
-                    text: TextSpan(
-                        style: const TextStyle(color: Colors.black),
-                        text: "If you don't have an account ?",
-                        children: [
+                  text: TextSpan(
+                    style: const TextStyle(color: Colors.black),
+                    text: "If you don't have an account ?",
+                    children: [
                       WidgetSpan(
-                          alignment: PlaceholderAlignment.middle,
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const SignUpPage(),
-                                ),
-                              );
-                            },
-                            child: const Text(
-                              textAlign: TextAlign.start,
-                              '  SIGN UP',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF609966),),
+                        alignment: PlaceholderAlignment.middle,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignUpPage(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            textAlign: TextAlign.start,
+                            '  SIGN UP',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF609966),
                             ),
-                          ),),
-                    ],),),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
@@ -234,14 +241,15 @@ class _PasswordState extends State<Password> {
   @override
   Widget build(BuildContext context) {
     return AppTextField(
-        obscureText: showPassword,
-        suffixIcon: IconButton(
-          icon: Icon(
-            showPassword ? Icons.visibility : Icons.visibility_off,
-          ),
-          onPressed: _toggleVisibility,
+      obscureText: showPassword,
+      suffixIcon: IconButton(
+        icon: Icon(
+          showPassword ? Icons.visibility : Icons.visibility_off,
         ),
-        hintText: 'Password',
-        controller: widget.passwordController);
+        onPressed: _toggleVisibility,
+      ),
+      hintText: 'Password',
+      controller: widget.passwordController,
+    );
   }
 }

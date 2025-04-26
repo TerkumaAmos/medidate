@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:harmony_hush/landing_page.dart';
 import 'package:harmony_hush/sign_in.dart';
-import 'package:harmony_hush/sign_up.dart';
 
 class OnboardScreen extends StatelessWidget {
   const OnboardScreen({super.key});
@@ -42,11 +40,8 @@ class OnboardScreen extends StatelessWidget {
             height: 55,
             width: 320,
             decoration: BoxDecoration(
-                color: Colors.red,
-
-                borderRadius: BorderRadius.circular(30)
-            ),
-            child:const  Center(
+                color: Colors.red, borderRadius: BorderRadius.circular(30)),
+            child: const Center(
               child: Text(
                 "SIGN UP",
                 style: TextStyle(color: Colors.white),
