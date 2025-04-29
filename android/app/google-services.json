@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "560257764353",
+    "project_id": "harmonyhush-3f558",
+    "storage_bucket": "harmonyhush-3f558.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560257764353:android:840bbdb22c277757624400",
+        "android_client_info": {
+          "package_name": "com.example.harmony_hush"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnfLWPL1KBOfBV5BpVFi31qWYYnxh504k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
