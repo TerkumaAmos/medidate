@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:harmony_hush/Icons.dart';
 
 class Medidate extends StatefulWidget {
-  Medidate({super.key});
+  const Medidate({super.key});
 
   @override
   State<Medidate> createState() => _MedidateState();
@@ -31,20 +31,19 @@ class _MedidateState extends State<Medidate> {
       'subtitle': '15 Min • Morning music'
     },
   ];
-   int _selectedIndex =0;
-   void _navigateBottomBar(int index){
-     setState(() {
-       _selectedIndex =index ;
-     });
-   }
-
+  int _selectedIndex = 0;
+  void _navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:const  Color(0xFFECF4E2),
+      backgroundColor: const Color(0xFFECF4E2),
       appBar: AppBar(
-        backgroundColor:const  Color(0xFFECF4E2),
+        backgroundColor: const Color(0xFFECF4E2),
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -66,15 +65,14 @@ class _MedidateState extends State<Medidate> {
           // SingleChildScrollView(
           //   scrollDirection: Axis.horizontal,
           // ),
-       const   SizedBox(
+          const SizedBox(
             height: 20,
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: CardWithIcon(iconData: Icons.grid_view, text: "All"),
               ),
               CardWithIcon(iconData: Icons.favorite_border, text: "My"),
@@ -84,13 +82,13 @@ class _MedidateState extends State<Medidate> {
               CardWithIcon(iconData: Icons.child_care, text: "kids"),
             ],
           ),
-       const   SizedBox(height: 10),
+          const SizedBox(height: 10),
           Container(
             height: 200,
             // width: 400,
-            margin:const EdgeInsets.only(left: 10, right: 10),
+            margin: const EdgeInsets.only(left: 10, right: 10),
             decoration: BoxDecoration(
-              color:const  Color(0xFF3E3E3E),
+              color: const Color(0xFF3E3E3E),
               borderRadius: BorderRadius.circular(20),
               image: const DecorationImage(
                 image: AssetImage(
@@ -162,8 +160,8 @@ class _MedidateState extends State<Medidate> {
               ],
             ),
           ),
-       const    SizedBox(height: 10),
-         // Grid of meditation cards
+          const SizedBox(height: 10),
+          // Grid of meditation cards
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -185,32 +183,31 @@ class _MedidateState extends State<Medidate> {
               ),
             ),
           ),
-
         ],
-
       ),
-
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFFECF4E2),
+        backgroundColor: const Color(0xFFECF4E2),
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Color(0xFF61876E),
-
+        selectedItemColor: const Color(0xFF61876E),
         currentIndex: _selectedIndex,
         onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
-        items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.my_library_music_rounded),label: 'Music'),
-
-        BottomNavigationBarItem(icon: Icon(Icons.self_improvement),label: 'Meditate'),
-
-        BottomNavigationBarItem(icon: Icon(Icons.nightlight),label: 'Sleep'),
-
-        BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Shehan'),
-
-      ],
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.my_library_music_rounded), label: 'Music'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.self_improvement), label: 'Meditate'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.nightlight),
+            label: 'Sleep',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'T.E.C.H_uma',
+          ),
+        ],
       ),
-
     );
   }
 }

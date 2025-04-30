@@ -40,7 +40,11 @@ class OnboardScreen extends StatelessWidget {
             height: 55,
             width: 320,
             decoration: BoxDecoration(
-                color: Colors.red, borderRadius: BorderRadius.circular(30)),
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(
+                30,
+              ),
+            ),
             child: const Center(
               child: Text(
                 "SIGN UP",
