@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:harmony_hush/onboard_screen.dart';
+import 'package:harmony_hush/practice.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnboardScreen(),
+      home: Practice(),
     );
   }
 }
