@@ -10,7 +10,7 @@
   },
   "cxxBuildFolder": "/Users/user/Desktop/T.E.C.H_uma/harmony_hush/android/app/.cxx/Debug/5a57r38g/x86",
   "soFolder": "/Users/user/Desktop/T.E.C.H_uma/harmony_hush/android/app/build/intermediates/cxx/Debug/5a57r38g/obj/x86",
-  "soRepublishFolder": "/Users/user/Desktop/T.E.C.H_uma/harmony_hush/android/app/build/intermediates/cmake/debug/obj/x86",
+  "soRepublishFolder": "/Users/user/Desktop/T.E.C.H_uma/harmony_hush/android/app/build/intermediates/cmake/profile/obj/x86",
   "abiPlatformVersion": 23,
   "cmake": {
     "effectiveConfiguration": {
@@ -25,7 +25,7 @@
     ],
     "cFlagsList": [],
     "cppFlagsList": [],
-    "variantName": "debug",
+    "variantName": "profile",
     "isDebuggableEnabled": true,
     "validAbiList": [
       "armeabi-v7a",
