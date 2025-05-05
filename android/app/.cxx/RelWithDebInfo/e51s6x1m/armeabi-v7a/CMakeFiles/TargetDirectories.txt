@@ -1,0 +1,2 @@
+/Users/user/Desktop/T.E.C.H_uma/harmony_hush/android/app/.cxx/RelWithDebInfo/e51s6x1m/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/user/Desktop/T.E.C.H_uma/harmony_hush/android/app/.cxx/RelWithDebInfo/e51s6x1m/armeabi-v7a/CMakeFiles/rebuild_cache.dir
