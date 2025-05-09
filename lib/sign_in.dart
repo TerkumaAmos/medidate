@@ -1,7 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:harmony_hush/app_text.dart';
 import 'package:harmony_hush/onboard_screen2.dart';
 import 'package:harmony_hush/sign_up.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -11,8 +13,23 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  Future SignIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+    );
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,10 +159,10 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(height: 30),
               AppTextField(
                 hintText: "Email address",
-                controller: emailController,
+                controller: _emailController,
               ),
               const SizedBox(height: 30),
-              Password(passwordController: passwordController),
+              Password(passwordController: _passwordController),
               const SizedBox(
                 height: 10,
               ),
@@ -156,24 +173,20 @@ class _SignInPageState extends State<SignInPage> {
                 ],
               ),
               const SizedBox(height: 30),
-              Container(
-                width: 320,
-                height: 55,
-                child: ElevatedButton(
-                  style: const ButtonStyle(
-                      backgroundColor:
-                          WidgetStatePropertyAll(Color(0xFF609966))),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const OnboardScreen2(),
-                      ),
-                    );
-                  },
-                  child: const Text(
-                    "SIGN IN",
-                    style: TextStyle(color: Colors.white),
+              GestureDetector(
+                onTap: SignIn,
+                child: Container(
+                  width: 320,
+                  height: 55,
+                  decoration: BoxDecoration(
+                      color: const Color(0xFF609966),
+                      borderRadius: BorderRadius.circular(30)),
+                  child: const Center(
+                    child: Text(
+                      "SIGN IN",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
